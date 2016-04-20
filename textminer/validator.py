@@ -32,18 +32,9 @@ def phone_number(string):
     return re.match(r'.?\d{3}.*\d{3}.?\d{4}.?', string)
 
 
-# def zip_code(string):
-#     if re.match(r'^(\d{5}(\-\d{4})?)$', string):
-#         return True
-#     return False
+def zipcode(string):
+    return re.match(r'^\d{5}(\-\d{4})?$', string)
 
-# print(zip_code('12345'))
-# print(zip_code('12345-1234'))
-# print('--------------------')
-# print(zip_code('1234'))
-# print(zip_code('1234512'))
-# print(zip_code('1234-1212'))
-# print(zip_code('12345-12123'))
 
 # def money(string):
 #     return re.match(r'^\$\d*[,\d{3}]*\.?\d{2}$', string)

@@ -111,19 +111,19 @@ def test_phone_numbers():
 #     assert not v.money("$$31")
 
 
-# @xfail
-# def test_zip():
-#     assert v.zipcode("63936")
-#     assert v.zipcode("50583")
-#     assert v.zipcode("48418")
-#     assert v.zipcode("06399")
-#     assert v.zipcode("26433-3235")
-#     assert v.zipcode("64100-6308")
-#     assert not v.zipcode("")
-#     assert not v.zipcode("7952")
-#     assert not v.zipcode("115761")
-#     assert not v.zipcode("60377-331")
-#     assert not v.zipcode("8029-3924")
+@xfail
+def test_zip():
+    assert v.zipcode("63936")
+    assert v.zipcode("50583")
+    assert v.zipcode("48418")
+    assert v.zipcode("06399")
+    assert v.zipcode("26433-3235")
+    assert v.zipcode("64100-6308")
+    assert not v.zipcode("")
+    assert not v.zipcode("7952")
+    assert not v.zipcode("115761")
+    assert not v.zipcode("60377-331")
+    assert not v.zipcode("8029-3924")
 
 
 # @xfail

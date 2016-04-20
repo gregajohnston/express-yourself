@@ -8,12 +8,33 @@ def words(string):
     return None
 
 
-# def phone_numbers(string):
-#     return {"area_code": "919", "number": "555-1212"}
-#     # return dict([('area_code', re.search(r'^\d+', string).group(0)),
-#     #            ('number', re.search(r'(\d+[-]\d+)$', string).group(0))])
-#
+def phone_number(string):
+    if len(string) < 10:
+        return None
+    rd = dict([('area_code', re.search(r'\d{3}', string).group(0)),
+              ('number', re.search(r'\d{3}[\.-]?\d{4}$',
+               string).group(0))])
+    rd['area_code'] = rd['area_code'][0:3]
+    rd['number'] = rd['number'][0:3]+'-'+rd['number'][-4:]
+    return rd
 
+# print(phone_number('111-555-1212'))
+# print(phone_number('(222) 555-1212'))
+# print(phone_number('3335551212'))
+# print(phone_number('444 555-1212'))
+# print(phone_number('555.555.1212'))
+# print(phone_number('666-1212'))
+
+
+# def money(string):
+#     if string[0] not in ['$']:
+#         return None
+#     rd = dict('currency', string[0])
+#     string = string[1:]
+#     rd['amount'] =
+#     rd['area_code'] = rd['area_code'][0:3]
+#     rd['number'] = rd['number'][0:3]+'-'+rd['number'][-4:]
+#     return rd
 """
 \w+\S+\D+
 

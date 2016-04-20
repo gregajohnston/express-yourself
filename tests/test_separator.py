@@ -17,17 +17,17 @@ def test_words(input, expected):
     assert s.words(input) == expected
 
 
-# @xfail
-# @params("input,expected", [
-#     ("919-555-1212", {"area_code": "919", "number": "555-1212"}),
-#     ("(919) 555-1212", {"area_code": "919", "number": "555-1212"}),
-#     ("9195551212", {"area_code": "919", "number": "555-1212"}),
-#     ("919.555.1212", {"area_code": "919", "number": "555-1212"}),
-#     ("919 555-1212", {"area_code": "919", "number": "555-1212"}),
-#     ("555-121", None)
-# ])
-# def test_phone_numbers(input, expected):
-#    assert s.phone_number(input) == expected
+@xfail
+@params("input,expected", [
+    ("919-555-1212", {"area_code": "919", "number": "555-1212"}),
+    ("(919) 555-1212", {"area_code": "919", "number": "555-1212"}),
+    ("9195551212", {"area_code": "919", "number": "555-1212"}),
+    ("919.555.1212", {"area_code": "919", "number": "555-1212"}),
+    ("919 555-1212", {"area_code": "919", "number": "555-1212"}),
+    ("555-121", None)
+])
+def test_phone_numbers(input, expected):
+    assert s.phone_number(input) == expected
 
 
 # @xfail
@@ -55,9 +55,9 @@ def test_words(input, expected):
 # def test_money(input, expected):
 #     """We are just concerned with dollars here for now but might take other
 #     currencies later."""
-#     assert s.money(input) == expected
-#
-#
+#    assert s.money(input) == expected
+
+
 # @xfail
 # @params("input,expected", [
 #     ("63936", {"zip": "63936", "plus4": None}),
